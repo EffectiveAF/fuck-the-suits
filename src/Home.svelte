@@ -42,7 +42,7 @@
     <div class="sidebar-content">
       <div class="logo-ctn">
         <img src="/img/fuck-the-suits.svg" alt="The People will win, always." height="65px" width="103px">
-        <img src="/img/lul.gif" alt="We Do Not Forgive. We Do Not Forget." height="65px" width="65px" style="padding-left: 8px">
+        <div class="eff-the-suits"></div>
       </div>
 
       <div class="sidebar-items">
@@ -175,6 +175,18 @@
   flex-direction: row;
   padding: 56px 8px 0px 16px;
   height: 64px;
+}
+
+.eff-the-suits {
+  background-image: url('/img/wsb_dude.png');
+  width: 65px;
+  height: 65px;
+  margin-left: 8px;
+}
+
+.eff-the-suits:hover {
+  cursor: pointer;
+  background-image: url('/img/anon.png');
 }
 
 /* Data Viz */
