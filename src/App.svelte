@@ -2,6 +2,7 @@
   import { Router, Route } from 'svelte-routing';
 
   import Home from './Home.svelte';
+  import StackedBarChart from './StackedBarChart.svelte';
   import TermsOfService from './TermsOfService.svelte';
 </script>
 
@@ -22,6 +23,7 @@
   </nav>
   <div>
     <Route path="/tos" component="{TermsOfService}" />
+    <Route path="/chart/2"><StackedBarChart /></Route>
     <Route path="/"><Home /></Route>
   </div>
 </Router>
