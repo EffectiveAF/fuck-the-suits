@@ -99,7 +99,7 @@
 .sidebar-items {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: calc(100% - 32px);
   height: auto;
   padding: 80px 16px 0px 16px;
 }
