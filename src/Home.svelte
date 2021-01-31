@@ -83,7 +83,8 @@
 
 .container {
   display: flex;
-  min-height: 1000px;
+  height: 100%;
+  min-height: 100vh;
   max-width: 1250px;
   margin: 0 auto;
 }
@@ -91,8 +92,8 @@
 .main-grid {
   max-width: 840px;
   width: 100%;
-  height: 100vh;
-  margin: auto;
+  height: 100%;
+  margin: 0 auto;
   padding-top: 176px;
   border: 1px solid yellow;
 }
@@ -130,7 +131,7 @@
 .ex-side {
   display: flex;
   width: 200px;
-  height: 100vh;
+  height: 100%;
   flex-direction: row;
 }
 
@@ -139,6 +140,7 @@
   flex-direction: column;
   width: calc(100% - 2px);
   border: 1px solid yellow;
+  -ms-overflow-style: none;
 }
 
 .divider {
