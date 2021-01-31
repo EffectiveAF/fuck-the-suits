@@ -4,6 +4,7 @@
   import Charts from 'fusioncharts/fusioncharts.charts';
   import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.candy';
   import SvelteFC, { fcRoot } from './svelte-fusioncharts';
+  import Divider from './Divider.svelte';
 
   import { chartData } from './stores.js';
 
@@ -33,10 +34,11 @@
   };
 </script>
 
-<div class="container" style="border: 1px solid red;">
+<!-- <div class="container" style="border: 1px solid red;"> -->
+<div class="container">
   
   <div class="ex-side">
-    <div class="divider"></div>
+    <Divider />
     <div class="sidebar-content">
       <div class="logo-ctn">
         <img src="/img/fuck-the-suits.svg" alt="The People will win, always." height="65px" width="103px">
@@ -53,7 +55,7 @@
         </ul>
       </div>
     </div>
-    <div class="divider"></div>
+    <Divider />
   </div>
   <div class="main-grid">
     <div class="section">
@@ -84,11 +86,11 @@
   height: 100%;
   margin: 0 auto;
   padding-top: 176px;
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
 }
 
 .section {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: auto;
   width: 488px;
 }
@@ -119,7 +121,7 @@
 
 .ex-side {
   display: flex;
-  width: 200px;
+  width: 210px;
   height: 100%;
   flex-direction: row;
 }
@@ -128,16 +130,8 @@
   display: flex;
   flex-direction: column;
   width: calc(100% - 2px);
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   -ms-overflow-style: none;
-}
-
-.divider {
-  display: flex;
-  flex-direction: row;
-  width: 1px;
-  height: 100%;
-  background-color: white;
 }
 
 .ex-side a {
@@ -189,8 +183,7 @@
 }
 
 :global(#raphael-paper-2) {
-  border-radius: 8px;
-  box-shadow: var(--overlay);
+  border: 1px solid #818285;
 }
 
 </style>
