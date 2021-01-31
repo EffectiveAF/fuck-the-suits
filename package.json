@@ -1,0 +1,15 @@
+{
+  "name": "fuck-the-suits",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Steve Phillips & Tim Sullivan",
+  "license": "Hippocratic-2.1",
+  "dependencies": {
+    "svelte": "^3.32.1",
+    "svelte-fusioncharts": "^1.0.0"
+  }
+}
