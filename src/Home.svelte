@@ -1,7 +1,43 @@
 <script>
   import Footer from './Footer.svelte';
+  import FusionCharts from 'fusioncharts';
+  import Charts from 'fusioncharts/fusioncharts.charts';
+  import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+  import SvelteFC, { fcRoot } from 'svelte-fusioncharts';
 
   export let location = '';
+
+  // Always set FusionCharts as the first parameter
+  fcRoot(FusionCharts, Charts, FusionTheme);
+
+  const dataSource = {
+    chart: {
+      caption: 'Countries With Most Oil Reserves [2017-18]',
+      subCaption: 'In MMbbl = One Million barrels',
+      xAxisName: 'Country',
+      yAxisName: 'Reserves (MMbbl)',
+      numberSuffix: 'K',
+      theme: 'fusion'
+    },
+    data: [
+      { label: 'Venezuela', value: '290' },
+      { label: 'Saudi', value: '260' },
+      { label: 'Canada', value: '180' },
+      { label: 'Iran', value: '140' },
+      { label: 'Russia', value: '115' },
+      { label: 'UAE', value: '100' },
+      { label: 'US', value: '30' },
+      { label: 'China', value: '30' }
+    ]
+  };
+
+  const chartConfigs = {
+    type: 'column2d',
+    width: 600,
+    height: 400,
+    dataFormat: 'json',
+    dataSource: dataSource
+  };
 </script>
 
 <div class="container" style="border: 1px solid red;">
@@ -13,21 +49,41 @@
         <img src="/img/fuck-the-suits.svg" alt="The People will win, always." height="65px" width="103px">
         <img src="/img/lul.gif" alt="We Do Not Forgive. We Do Not Forget." height="65px" width="65px" style="padding-left: 8px">
       </div>
+
+      <div class="sidebar-items">
+        <p class="labels-overline">Data Visualization</p>
+        <ul>
+          <li>List Item 1</li>
+          <li>List Item 2</li>
+          <li>List Item 3</li>
+          <li>List Item 4</li>
+        </ul>
+      </div>
     </div>
     <div class="divider"></div>
   </div>
   <div class="main-grid">
-
+    <div class="section">
+      <h1>Header</h1>
+      <p class="p-large" style="padding-top: 8px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor faucibus eget mauris ornare ornare. Mauris, molestie. Change the world.</p>
+    </div>
+    <div class="data-viz">
+      <SvelteFC {...chartConfigs} />
+    </div>
   </div>
-
+ 
 </div>
 
 <Footer />
 
 <style>
+:global(#raphael-paper-2) {
+  border-radius: 8px;
+}
+
 .container {
   display: flex;
-  min-height: 100vh;
+  min-height: 1000px;
   max-width: 1250px;
   margin: 0 auto;
 }
@@ -37,10 +93,40 @@
   width: 100%;
   height: 100vh;
   margin: auto;
+  padding-top: 176px;
   border: 1px solid yellow;
 }
 
+.section {
+  border: 1px solid red;
+  height: auto;
+  width: 488px;
+}
+
 /* Sidebar */
+.sidebar-items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding: 80px 16px 0px 16px;
+}
+
+.sidebar-items ul {
+  padding-top: 8px;
+}
+
+.sidebar-items ul li {
+  display: flex;
+  flex-direction: row;
+  font-family: "IBM Plex Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.0025em;
+}
+
 .ex-side {
   display: flex;
   width: 200px;
@@ -50,8 +136,8 @@
 
 .sidebar-content {
   display: flex;
-  flex-direction: row;
-  width: 198px;
+  flex-direction: column;
+  width: calc(100% - 2px);
   border: 1px solid yellow;
 }
 
