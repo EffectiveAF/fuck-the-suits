@@ -226,6 +226,12 @@ p {
   --contentColorMuted: rgba(255,255,255,0.5);
   --contentColorDisabled: rgba(255,255,255,0.3);
   --contentColorInverted: rgba(0,0,0,1);
+
+  /* Elevation */
+  --emboss: 0px 1px 5px rgba(0, 0, 0, 0.35), 0px 0px 1px rgba(0, 0, 0, 0.35);
+  --overlay: 0px 26px 103px rgba(0, 0, 0, 0.64), 0px 11px 18px rgba(0, 0, 0, 0.32), 0px 3px 6px rgba(0, 0, 0, 0.3);
+  --dialog: 0px 50px 200px #000000, 0px 29px 66px rgba(0, 0, 0, 0.41), 0px 14px 47px rgba(0, 0, 0, 0.17), 0px 5px 10px rgba(0, 0, 0, 0.15);
+  --drag: 0px 26px 103px rgba(0, 0, 0, 0.64), 0px 11px 18px rgba(0, 0, 0, 0.32), 0px 3px 6px rgba(0, 0, 0, 0.3);
 }
 
 /* Colors Endpoint */

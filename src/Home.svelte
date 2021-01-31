@@ -70,10 +70,6 @@
 <Footer />
 
 <style>
-:global(#raphael-paper-2) {
-  border-radius: 8px;
-}
-
 .container {
   display: flex;
   height: 100%;
@@ -186,4 +182,15 @@
   padding: 56px 8px 0px 16px;
   height: 64px;
 }
+
+/* Data Viz */
+.data-viz {
+  padding-top: 8px;
+}
+
+:global(#raphael-paper-2) {
+  border-radius: 8px;
+  box-shadow: var(--overlay);
+}
+
 </style>
