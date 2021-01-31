@@ -1,0 +1,78 @@
+{
+  "_args": [
+    [
+      "svelte-fusioncharts@1.0.0",
+      "/home/user/gocode/src/github.com/EffectiveAF/fuck-the-suits"
+    ]
+  ],
+  "_from": "svelte-fusioncharts@1.0.0",
+  "_id": "svelte-fusioncharts@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-OZk9thwMBHts7TVVIcTT8l9oEgzy6ppXLOtdf7gazobefddW3a0IXqe4mbBDWqLqxXBDyAePmRafZnu8Pc3rng==",
+  "_location": "/svelte-fusioncharts",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "svelte-fusioncharts@1.0.0",
+    "name": "svelte-fusioncharts",
+    "escapedName": "svelte-fusioncharts",
+    "rawSpec": "1.0.0",
+    "saveSpec": null,
+    "fetchSpec": "1.0.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/svelte-fusioncharts/-/svelte-fusioncharts-1.0.0.tgz",
+  "_spec": "1.0.0",
+  "_where": "/home/user/gocode/src/github.com/EffectiveAF/fuck-the-suits",
+  "author": {
+    "name": "Priyanjit Dey",
+    "email": "priyanjit.dey@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/priyanjitdey94/svelte-fusioncharts/issues"
+  },
+  "dependencies": {},
+  "description": "A simple and lightweight official Svelte component for FusionCharts JavaScript charting library. `svelte-fusioncharts` enables you to add JavaScript charts in your Svelte application or project without any hassle.",
+  "devDependencies": {
+    "rollup": "^1.11.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-svelte": "^5.0.0",
+    "svelte": "^3.0.0"
+  },
+  "files": [
+    "src",
+    "index.mjs",
+    "index.js"
+  ],
+  "homepage": "https://github.com/priyanjitdey94/svelte-fusioncharts#readme",
+  "keywords": [
+    "svelte",
+    "fusioncharts",
+    "powercharts",
+    "fusionwidgets",
+    "fusionmaps",
+    "fusiontime",
+    "timeseries",
+    "wrapper",
+    "charting-library",
+    "svelte-fusioncharts",
+    "svelte-wrapper"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "module": "index.mjs",
+  "name": "svelte-fusioncharts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/priyanjitdey94/svelte-fusioncharts.git"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
+  },
+  "svelte": "src/index.svelte",
+  "version": "1.0.0"
+}

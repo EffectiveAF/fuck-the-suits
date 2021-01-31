@@ -16,3 +16,8 @@ npm run dev
 ```
 
 Now visit <http://localhost:5000/> !
+
+
+## Attributions
+
+- Priyanjit Dey for our fork of `svelte-fusioncharts/`
