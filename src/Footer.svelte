@@ -1,4 +1,5 @@
 <script>
+  import { Link } from 'svelte-routing';
 </script>
 
 <div class="divider"></div>
@@ -9,8 +10,9 @@
   </div>
 
   <ul>
-    <li>About us</li>
-    <li>Vision</li>
+    <li style="font-size: 14px;">
+      <Link to="/tos">Terms</Link>
+    </li>
   </ul>
 </footer>
 
