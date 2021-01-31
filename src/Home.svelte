@@ -5,6 +5,8 @@
   import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
   import SvelteFC, { fcRoot } from 'svelte-fusioncharts';
 
+  import { chartData } from './stores.js';
+
   export let location = '';
 
   // Always set FusionCharts as the first parameter
@@ -19,16 +21,7 @@
       numberSuffix: 'K',
       theme: 'fusion'
     },
-    data: [
-      { label: 'Venezuela', value: '290' },
-      { label: 'Saudi', value: '260' },
-      { label: 'Canada', value: '180' },
-      { label: 'Iran', value: '140' },
-      { label: 'Russia', value: '115' },
-      { label: 'UAE', value: '100' },
-      { label: 'US', value: '30' },
-      { label: 'China', value: '30' }
-    ]
+    data: $chartData
   };
 
   const chartConfigs = {
