@@ -2,7 +2,7 @@
   import Footer from './Footer.svelte';
   import FusionCharts from 'fusioncharts';
   import Charts from 'fusioncharts/fusioncharts.charts';
-  import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+  import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.candy';
   import SvelteFC, { fcRoot } from './svelte-fusioncharts';
 
   import { chartData } from './stores.js';
@@ -19,14 +19,14 @@
       xAxisName: 'Country',
       yAxisName: 'Reserves (MMbbl)',
       numberSuffix: 'K',
-      theme: 'fusion'
+      theme: 'candy'
     },
     data: $chartData
   };
 
   const chartConfigs = {
     type: 'column2d',
-    width: 600,
+    width: "100%",
     height: 400,
     dataFormat: 'json',
     dataSource: dataSource
