@@ -12,6 +12,7 @@
   "author": "Steve Phillips & Tim Sullivan",
   "license": "Hippocratic-2.1",
   "dependencies": {
+    "fusioncharts": "^3.16.0",
     "string.prototype.startswith": "^1.0.0",
     "svelte": "^3.32.1",
     "svelte-fusioncharts": "^1.0.0",
