@@ -4,54 +4,105 @@
   export let location = '';
 </script>
 
-<div class="home container-fluid">
-  <div class="section-one">
-    <h2>Ready to change the World?</h2>
+<div class="container" style="border: 1px solid red;">
+  
+  <div class="ex-side">
+    <div class="divider"></div>
+    <div class="sidebar-content">
+      <div class="logo-ctn">
+        <img src="/img/fuck-the-suits.svg" alt="The People will win, always." height="65px" width="103px">
+        <img src="/img/lul.gif" alt="We Do Not Forgive. We Do Not Forget." height="65px" width="65px" style="padding-left: 8px">
+      </div>
+    </div>
+    <div class="divider"></div>
   </div>
+  <div class="main-grid">
 
-  <div class="section-one" style="margin-top: 100px">
-    <h2>Get started today.</h2>
-    <p class="p-large p-large-ctn" style="text-align: center; padding: 24px 0;">We imagine a world where anyone, anywhere can create a highly productive, volunteer-led, 100-person organization — in 1 hour.</p>
-    <button class="button primary">Sign up, cuck</button>
   </div>
-
-  <Footer />
 
 </div>
 
+<Footer />
+
 <style>
-  .home {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.container {
+  display: flex;
+  min-height: 100vh;
+  max-width: 1250px;
+  margin: 0 auto;
+}
 
-  .section-one {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 85%;
-    text-align: center;
-    padding: 100px 0;
-  }
+.main-grid {
+  max-width: 840px;
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  border: 1px solid yellow;
+}
 
-  .p-large-ctn {
-    width: 80%;
-  }
+/* Sidebar */
+.ex-side {
+  display: flex;
+  width: 200px;
+  height: 100vh;
+  flex-direction: row;
+}
 
-  @media (max-width: 499px) {
-    .p-large {
-      font-size: 18px;
-    }
+.sidebar-content {
+  display: flex;
+  flex-direction: row;
+  width: 198px;
+  border: 1px solid yellow;
+}
 
-    .p-large-ctn {
-      width: 96%;
-    }
+.divider {
+  display: flex;
+  flex-direction: row;
+  width: 1px;
+  height: 100%;
+  background-color: white;
+}
 
-    .section-one {
-      width: 100%;
-    }
-  }
+.ex-side a {
+  font-size: 0.9em;
+}
+
+.ex-side-content {
+  position: fixed;
+  width: 185px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100% - 10vh);
+  -ms-overflow-style: none;
+}
+
+.ex-side-content::-webkit-scrollbar {
+  width: 0 !important;
+  display: none !important;
+}
+
+.ex-side-content li {
+  list-style: none;
+}
+
+.ex-side-content li:before {
+  content: '';
+}
+
+.ex-side-content ul {
+  margin-left: 0;
+}
+
+.zi-title {
+  color: var(--contentColorActive);
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
+.logo-ctn {
+  display: flex;
+  flex-direction: row;
+  padding: 56px 8px 0px 16px;
+  height: 64px;
+}
 </style>
