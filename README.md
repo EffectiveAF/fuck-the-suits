@@ -13,6 +13,9 @@ Until now.
 npm i
 npm run build
 npm run dev
+
+# Or
+npm i && npm run build && npm run dev
 ```
 
 Now visit <http://localhost:5000/> !
