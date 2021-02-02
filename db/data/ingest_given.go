@@ -41,6 +41,8 @@ func main() {
 		log.Fatalf("Error connecting to Postgres: %s", err)
 	}
 
+	insertedTotal := 0
+
 	for _, filename := range filenames {
 		log.Infof("Ingesting file `%s` ...", filename)
 
@@ -117,5 +119,10 @@ func main() {
 		}
 
 		fmt.Printf("Successfully inserted %d rows from file %s\n", inserted, filename)
+		insertedTotal += inserted
+	}
+
+	if len(filenames) > 1 {
+		fmt.Printf("Inserted a total of %v rows from %v files\n", insertedTotal, len(filenames))
 	}
 }
