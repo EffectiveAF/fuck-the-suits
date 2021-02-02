@@ -39,7 +39,6 @@
 <div class="container">
   
   <div class="ex-side">
-    <Divider />
     <div class="sidebar-content">
       <div class="logo-ctn">
         <img src="/img/fuck-the-suits.svg" alt="The People will win, always." height="65px" width="103px">
@@ -56,7 +55,6 @@
         </ul>
       </div>
     </div>
-    <Divider />
   </div>
   <div class="main-grid">
     <div class="section">
@@ -69,9 +67,8 @@
       <StackedBarChart />
     </div>
   </div>
- 
-</div>
 
+</div>
 <Footer />
 
 <style>
@@ -125,8 +122,12 @@
 .ex-side {
   display: flex;
   width: 210px;
-  height: 100%;
+  height: 1000px;
   flex-direction: row;
+  background-color: #181818;
+  border-radius: 8px;
+  box-shadow: var(--pop);
+  margin: 32px 0;
 }
 
 .sidebar-content {
@@ -200,5 +201,4 @@
 :global(#raphael-paper-2) {
   border: 1px solid #818285;
 }
-
 </style>
