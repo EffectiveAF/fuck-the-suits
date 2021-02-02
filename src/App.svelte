@@ -3,7 +3,9 @@
 
   import Home from './Home.svelte';
   import StackedBarChart from './StackedBarChart.svelte';
+  import Methodology from './Methodology.svelte';
   import TermsOfService from './TermsOfService.svelte';
+  import Footer from './Footer.svelte';
 </script>
 
 <style>
@@ -22,8 +24,11 @@
   <nav>
   </nav>
   <div>
+    <Route path="/chart/2" component="{StackedBarChart}" />
+    <Route path="/chart/:symbol" component="{Home}" />
+    <Route path="/methodology" component="{Methodology}" />
     <Route path="/tos" component="{TermsOfService}" />
-    <Route path="/chart/2"><StackedBarChart /></Route>
     <Route path="/"><Home /></Route>
   </div>
+  <Footer />
 </Router>

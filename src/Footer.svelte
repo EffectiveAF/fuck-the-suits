@@ -10,8 +10,11 @@
   </div>
 
   <ul>
-    <li style="font-size: 14px;">
+    <li>
       <Link to="/tos">Terms</Link>
+    </li>
+    <li>
+      <Link to="/methodology">Methodology</Link>
     </li>
   </ul>
 </footer>
@@ -19,8 +22,7 @@
 <style>
 .divider {
   width: calc(100vw - 16px);
-  height: 1px;
-  margin-top: 180px;
+  height: 180px;
   background-color: var(--neutral200);
 }
 
@@ -54,6 +56,10 @@ footer > ul {
 footer ul li {
   margin-left: 24px;
   text-decoration: none;
+}
+
+footer ul > li > :global(a) {
+  font-size: 14px;
 }
 
 footer > * {

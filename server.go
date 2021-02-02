@@ -4,9 +4,6 @@ import (
 	"database/sql"
 	"io/ioutil"
 	"net/http"
-	"net/http/httputil"
-	"net/url"
-	"os"
 	"strings"
 	"time"
 
@@ -26,15 +23,15 @@ import (
 
 var (
 	DEFAULT_POSTGREST_BASE_URL = "http://127.0.0.1:4999/"
-	POSTGREST_BASE_URL         = os.Getenv("INTERNAL_POSTGREST_BASE_URL")
+	// POSTGREST_BASE_URL         = os.Getenv("INTERNAL_POSTGREST_BASE_URL")
 
 	pgDB *sql.DB
 )
 
 func init() {
-	if POSTGREST_BASE_URL == "" {
-		POSTGREST_BASE_URL = DEFAULT_POSTGREST_BASE_URL
-	}
+	// if POSTGREST_BASE_URL == "" {
+	// 	POSTGREST_BASE_URL = DEFAULT_POSTGREST_BASE_URL
+	// }
 
 	// Create generic Postgres connection
 	db, err := sql.Open("postgres", POSTGRES_CONNECT)
@@ -52,16 +49,21 @@ func NewRouter() *mux.Router {
 	r.HandleFunc("/tos", GetIndex).Methods("GET")
 	r.HandleFunc("/tos/", GetIndex).Methods("GET")
 
-	postgrestAPI, _ := url.Parse(POSTGREST_BASE_URL)
-	handlePostgrest := http.StripPrefix("/postgrest",
-		httputil.NewSingleHostReverseProxy(postgrestAPI))
+	r.HandleFunc("/methodology", GetIndex).Methods("GET")
+	r.HandleFunc("/methodology/", GetIndex).Methods("GET")
+
+	r.PathPrefix("/chart").HandlerFunc(GetIndex)
+
+	// postgrestAPI, _ := url.Parse(POSTGREST_BASE_URL)
+	// handlePostgrest := http.StripPrefix("/postgrest",
+	// 	httputil.NewSingleHostReverseProxy(postgrestAPI))
 
 	handleBuildDir := http.FileServer(http.Dir("./public"))
 
-	// TODO(elimisteve): Remove?
-	r.PathPrefix("/postgrest").Handler(handlePostgrest)
+	// // TODO(elimisteve): Remove?
+	// r.PathPrefix("/postgrest").Handler(handlePostgrest)
 
-	r.HandleFunc("/api/ws/all", WSAllHandler).Methods("GET")
+	// r.HandleFunc("/api/ws/all", WSAllHandler).Methods("GET")
 
 	r.PathPrefix("/").Handler(gzipHandler(handleBuildDir)).Methods("GET")
 

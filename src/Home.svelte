@@ -28,7 +28,7 @@
 
   const chartConfigs = {
     type: 'column2d',
-    width: "100%",
+    width: '100%',
     height: 400,
     dataFormat: 'json',
     dataSource: dataSource
@@ -37,7 +37,7 @@
 
 <!-- <div class="container" style="border: 1px solid red;"> -->
 <div class="container">
-  
+
   <div class="ex-side">
     <div class="sidebar-content">
       <div class="logo-ctn">
@@ -69,7 +69,6 @@
   </div>
 
 </div>
-<Footer />
 
 <style>
 .container {

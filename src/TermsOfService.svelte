@@ -14,8 +14,6 @@
 
   <p>(TODO: Add remainder of TOS here before public launch.)</p>
 
-  <Footer />
-
 </div>
 
 <style>
