@@ -5,6 +5,7 @@
   import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.candy';
   import SvelteFC, { fcRoot } from './svelte-fusioncharts';
   import Divider from './Divider.svelte';
+  import StackedBarChart from './StackedBarChart.svelte';
 
   import { chartData } from './stores.js';
 
@@ -15,7 +16,7 @@
 
   const dataSource = {
     chart: {
-      caption: 'Countries With Most Oil Reserves [2017-18]',
+      caption: 'It is time to short stock the short stockers, motherfuckers.',
       subCaption: 'In MMbbl = One Million barrels',
       xAxisName: 'Country',
       yAxisName: 'Reserves (MMbbl)',
@@ -64,6 +65,8 @@
     </div>
     <div class="data-viz">
       <SvelteFC {...chartConfigs} />
+      <div style="padding-top: 16px;"></div>
+      <StackedBarChart />
     </div>
   </div>
  
