@@ -40,7 +40,7 @@
           {
             plot: {
               value: 'Short Volume',
-              type: 'line'
+              type: 'column'
             },
             format: {
               prefix: ''
