@@ -1,26 +1,30 @@
 <script>
-  import Footer from './Footer.svelte';
+  import { Link, navigate } from 'svelte-routing';
   import FusionCharts from 'fusioncharts';
   import Charts from 'fusioncharts/fusioncharts.charts';
   import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.candy';
   import SvelteFC, { fcRoot } from './svelte-fusioncharts';
-  import Divider from './Divider.svelte';
-  import StackedBarChart from './StackedBarChart.svelte';
-
-  import { chartData } from './stores.js';
+  // import StackedBarChart from './StackedBarChart.svelte';
+  import TimeSeriesChart from './TimeSeriesChart.svelte';
+  import { currentSymbol, chartData } from './stores.js';
 
   export let location = '';
+  export let symbol = '';
+
+  if (symbol) {
+    $currentSymbol = symbol;
+  }
 
   // Always set FusionCharts as the first parameter
   fcRoot(FusionCharts, Charts, FusionTheme);
 
   const dataSource = {
     chart: {
-      caption: 'It is time to short stock the short stockers, motherfuckers.',
-      subCaption: 'In MMbbl = One Million barrels',
-      xAxisName: 'Country',
-      yAxisName: 'Reserves (MMbbl)',
-      numberSuffix: 'K',
+      caption: 'The Most Shorted Companies This Past Week',
+      subCaption: '',
+      xAxisName: 'Company Ticker Symbol',
+      yAxisName: 'Short Volume (last 5 trading days)',
+      numberSuffix: '',
       theme: 'candy'
     },
     data: $chartData
@@ -41,33 +45,73 @@
   <div class="ex-side">
     <div class="sidebar-content">
       <div class="logo-ctn">
-        <img src="/img/fuck-the-suits.svg" alt="The People will win, always." height="65px" width="103px">
+        <img src="/img/fuck-the-suits.svg" alt="In the end, We the People will win." height="65px" width="103px">
         <div class="eff-the-suits"></div>
       </div>
 
       <div class="sidebar-items">
         <p class="labels-overline">Data Visualization</p>
         <ul>
-          <li>List Item 1</li>
-          <li>List Item 2</li>
-          <li>List Item 3</li>
-          <li>List Item 4</li>
+          <li>
+            <Link to="/" on:click={(e) => {
+              e.preventDefault();
+              navigate('/');
+              $currentSymbol = '';
+            }}>
+              The Biggest Shorts
+            </Link>
+          </li>
+
+          {#each $chartData as company (company.label)}
+          <li>
+            <Link to={`/chart/${company.label}`} on:click={(e) => {
+              e.preventDefault();
+              navigate('/chart/' + company.label);
+              $currentSymbol = company.label;
+            }}>
+              {company.label}
+            </Link>
+          </li>
+          {/each}
+        </ul>
+
+        <div style="height: 32px;"></div>
+
+        <p class="labels-overline">More Info</p>
+        <ul>
+          <li>
+            <Link to="/methodology">Methodology</Link>
+          </li>
         </ul>
       </div>
     </div>
   </div>
   <div class="main-grid">
-    <div class="section">
-      <h1>Header</h1>
-      <p class="p-large" style="padding-top: 8px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor faucibus eget mauris ornare ornare. Mauris, molestie. Change the world.</p>
-    </div>
-    <div class="data-viz">
-      <SvelteFC {...chartConfigs} />
-      <div style="padding-top: 16px;"></div>
-      <StackedBarChart />
-    </div>
+    {#if !$currentSymbol}
+      <div class="section">
+        <div class="header-and-image">
+          <h1>The Biggest Shorts</h1>
+          <div style="width: 16px;"></div>
+          <img src="/img/short-shorts2.jpg" alt="Who wears short shorts?" />
+        </div>
+        <p class="p-large" style="padding-top: 8px;">
+          Below are the most shorted companies in the world -- those with the
+          highest short volume -- over the last 5 trading days.
+          <br />
+          <br />
+          You know what to do. #HoldTheLine
+          <br />
+          <br />
+          <Link to={'/methodology'}>The deets</Link>
+        </p>
+      </div>
+      <div class="data-viz">
+        <SvelteFC {...chartConfigs} />
+      </div>
+    {:else}
+      <TimeSeriesChart />
+    {/if}
   </div>
-
 </div>
 
 <style>
@@ -88,10 +132,17 @@
   /* border: 1px solid yellow; */
 }
 
+.header-and-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .section {
   /* border: 1px solid red; */
   height: auto;
-  width: 488px;
+  width: 540px;
 }
 
 /* Sidebar */
