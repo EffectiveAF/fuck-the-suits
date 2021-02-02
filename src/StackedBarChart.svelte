@@ -2,7 +2,7 @@
   import FusionCharts from 'fusioncharts';
   import Charts from 'fusioncharts/fusioncharts.charts';
   import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.candy';
-  import SvelteFC, { fcRoot } from 'svelte-fusioncharts';
+  import SvelteFC, { fcRoot } from './svelte-fusioncharts';
   import dataSource from './data.js';
 
   export let location = '';
@@ -31,7 +31,7 @@
   };
 </script>
 
-<div id='chart-container2' style='height: 47.5%;'>
+<div id='chart-container2'>
   <SvelteFC {...chartConfigStackedColumn} />
 </div>
 <div style="text-align: left; padding-top: 5px;">

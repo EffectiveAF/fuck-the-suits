@@ -65,7 +65,7 @@
     </div>
     <div class="data-viz">
       <SvelteFC {...chartConfigs} />
-        <div style="padding-top: 16px;"></div>
+      <div style="padding-top: 16px;"></div>
       <StackedBarChart />
     </div>
   </div>
