@@ -119,12 +119,12 @@
   display: flex;
   height: 100%;
   min-height: 100vh;
-  max-width: 1250px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 
 .main-grid {
-  max-width: 840px;
+  max-width: 640px;
   width: 100%;
   height: 100%;
   margin: 0 auto;
