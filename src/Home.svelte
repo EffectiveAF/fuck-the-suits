@@ -23,7 +23,7 @@
   <div class="ex-side">
     <div class="sidebar-content">
       <div class="logo-ctn">
-        <img src="/img/fuck-the-suits.svg" alt="In the end, We the People will win." height="65px" width="103px">
+        <img src="/img/fuck-the-suits.svg" alt="In the end, The People will win -- always." height="65px" width="103px">
         <div class="eff-the-suits"></div>
       </div>
 

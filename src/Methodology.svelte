@@ -1,4 +1,6 @@
 <script>
+  import { Link } from 'svelte-routing';
+
   export let location = '';
 </script>
 
@@ -19,9 +21,11 @@
         Our calculations could be catastrophically wrong, for retards we are.
       </p>
 
-      <p>Go on, give them hell and...</p>
+      <p>As always, don't forget to...</p>
 
-      <img src="/img/fuck-the-suits.svg" alt="In the end, We the People will win." height="65px" width="103px" style="margin-top: 24px;">
+      <Link to="/">
+        <img src="/img/fuck-the-suits.svg" alt="In the end, The People will win -- always." height="65px" width="103px" style="margin-top: 24px;">
+      </Link>
   </div>
 </div>
 
@@ -33,7 +37,7 @@ p {
 
 h2, p {
   margin-top: 24px;
-  max-width: 80%;
+  max-width: 100%;
 }
 
 @media (max-width: 639px) {

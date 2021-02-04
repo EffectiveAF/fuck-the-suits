@@ -7,14 +7,41 @@
 <div class="container">
   <div class="main-grid">
 
-  <h2>Terms of Service</h2>
+    <h2>Terms of Service</h2>
 
-  <h4>Guiding philosophy: you can do anything you want with this software <em>except</em> commit or plan human rights violations.<strong></strong></h4>
+    <h4>Guiding philosophy: you can do anything you want with this software <em>except</em> commit or plan human rights violations.<strong></strong></h4>
 
-  <p>See below for details and official legalese version.</p>
+    <p>
+      Nothing on this website should be construed as financial advice.
+    </p>
 
-  <p>(TODO: Add remainder of TOS here before public launch.)</p>
+    <p>
+      Our calculations could be catastrophically wrong, for retards we are.
+    </p>
 
+    <p>
+      We are liable for nothing.
+    </p>
+
+    <p>
+      All rights reserved, bitches.
+    </p>
+
+    <br />
+    <hr />
+
+    <p>We do not forgive.</p>
+
+    <p>We do not forget.</p>
+
+    <p>Expect us.</p>
+
+    <p>United as one.</p>
+
+    <p>Divided by zero.</p>
+
+    <br />
+    <hr />
   </div>
 </div>
 
@@ -25,7 +52,7 @@ p {
 
 h2, h4, p {
   margin-top: 24px;
-  max-width: 80%;
+  max-width: 100%;
 }
 
 @media (max-width: 639px) {
