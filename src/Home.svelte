@@ -81,7 +81,8 @@
 
         <p class="p-large" style="padding-top: 8px;">
           Below are the most shorted companies in the world -- those with the
-          highest short volume -- over the last 5 trading days.
+          highest short volume -- over the previous 5 trading days, namely
+          <strong>Jan 28 through Feb 3, 2021</strong>.
           <br />
           <br />
           You know what to do. #HoldTheLine
