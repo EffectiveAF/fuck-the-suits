@@ -59,6 +59,7 @@ footer > ul {
 }
 
 footer ul li {
+  height: 32px;
   margin: 0 24px;
   text-decoration: none;
 }

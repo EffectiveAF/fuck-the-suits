@@ -240,7 +240,7 @@ p {
 
   /* For text and iconography */
   --contentColorActive: rgba(255,255,255,0.98);
-  --contentColorDefault: rgba(255,255,255,0.7);
+  --contentColorDefault: rgba(255,255,255,0.8);
   --contentColorMuted: rgba(255,255,255,0.5);
   --contentColorDisabled: rgba(255,255,255,0.3);
   --contentColorInverted: rgba(0,0,0,1);
