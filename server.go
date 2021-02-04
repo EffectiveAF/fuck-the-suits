@@ -50,7 +50,7 @@ func loggingMiddleware(next http.Handler) http.Handler {
 			!strings.HasPrefix(r.RequestURI, "/global.css") &&
 			!strings.HasPrefix(r.RequestURI, "/favicon") {
 
-			log.Infof("New request to %s\n", r.RequestURI)
+			log.Infof("New request to %s", r.RequestURI)
 		}
 		next.ServeHTTP(w, r)
 	})
