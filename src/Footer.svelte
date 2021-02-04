@@ -72,7 +72,7 @@ footer > * {
   padding: 0 24px;
 }
 
-@media (max-width: 799px) {
+@media (max-width: 839px) {
   .divider {
     height: 64px;
   }

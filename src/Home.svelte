@@ -86,7 +86,6 @@
           <br />
           You know what to do. #HoldTheLine
           <br />
-          <br />
         </p>
       </div>
 
@@ -94,6 +93,16 @@
         <BarChart />
       </div>
     {:else}
+      <div class="section">
+        <div class="header-and-image">
+          <h1>Shorting {$currentSymbol}</h1>
+          <div style="width: 16px;"></div>
+          <img src="/img/short-shorts2.jpg" alt="Who wears short shorts?" />
+        </div>
+      </div>
+
+      <div style="height: 8px;"></div>
+
       <TimeSeriesChart />
     {/if}
   </div>
@@ -244,7 +253,7 @@
   -webkit-focus-ring-color: auto 5px;
 }
 
-@media (max-width: 799px) {
+@media (max-width: 839px) {
   .container {
     flex-direction: column;
   }
