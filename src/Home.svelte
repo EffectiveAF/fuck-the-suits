@@ -90,7 +90,9 @@
         </p>
       </div>
 
-      <BarChart />
+      <div class="bar-chart">
+        <BarChart />
+      </div>
     {:else}
       <TimeSeriesChart />
     {/if}
@@ -121,6 +123,8 @@
 }
 
 .sidebar-items ul {
+  display: flex;
+  flex-direction: column;
   padding-top: 8px;
 }
 
@@ -137,9 +141,9 @@
 
 .ex-side {
   display: flex;
+  flex-direction: row;
   width: 210px;
   height: 1000px;
-  flex-direction: row;
   background-color: #181818;
   border-radius: 8px;
   box-shadow: var(--pop);
@@ -239,4 +243,70 @@
 .link:focus {
   -webkit-focus-ring-color: auto 5px;
 }
+
+@media (max-width: 799px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .main-grid {
+    padding-top: 16px;
+  }
+
+  .ex-side {
+    width: 100%;
+    height: 100%;
+  }
+
+  .ex-side-content {
+    width: 100%;
+  }
+
+  .sidebar-content {
+    flex-direction: column;
+  }
+
+  .sidebar-items {
+    padding-top: 36px;
+  }
+
+  .sidebar-items ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .sidebar-items ul > li {
+    margin-right: 16px;
+  }
+
+  .bar-chart,
+  .section {
+    padding: 0 8px;
+  }
+
+  .section {
+    width: calc(100% - 16px);
+  }
+
+  :global(footer) {
+    flex-wrap: wrap;
+  }
+
+  :global(footer > ul) {
+    justify-content: center;
+  }
+
+  :global(footer ul > li > a) {
+    font-size: 16px;
+  }
+
+  :global(.donate) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
 </style>

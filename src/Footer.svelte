@@ -1,6 +1,6 @@
 <script>
   import { Link } from 'svelte-routing';
-  import Button from './Button.svelte';
+  import DonateButton from './DonateButton.svelte';
   import ReactivePath from './ReactivePath.svelte';
 </script>
 
@@ -19,7 +19,8 @@
       <Link to="/methodology">Methodology</Link>
     </li>
   </ul>
-  <Button />
+
+  <DonateButton />
 </footer>
 
 <ReactivePath />
@@ -36,7 +37,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  width: 80%;
+  width: 100%;
   color: var(--contentColorActive);
 }
 
@@ -51,7 +52,6 @@ footer {
 footer > ul {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
   align-items: center;
   width: 100%;
   height: 64px;
@@ -59,25 +59,25 @@ footer > ul {
 }
 
 footer ul li {
-  margin-left: 24px;
+  margin: 0 24px;
   text-decoration: none;
 }
 
 footer ul > li > :global(a) {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 footer > * {
   padding: 0 24px;
 }
 
-@media (max-width: 499px) {
-  .logo-text {
-    width: 20%;
+@media (max-width: 799px) {
+  .divider {
+    height: 64px;
   }
 
-  .logo-text > p {
-    display: none;
+  .logo-text {
+    justify-content: center;
   }
 
   footer > * {
