@@ -1,5 +1,6 @@
 <script>
   import { Link } from 'svelte-routing';
+  import Button from './Button.svelte';
 </script>
 
 <div class="divider"></div>
@@ -17,6 +18,7 @@
       <Link to="/methodology">Methodology</Link>
     </li>
   </ul>
+  <Button />
 </footer>
 
 <style>
