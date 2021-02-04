@@ -43,8 +43,22 @@ func init() {
 	pgDB = db
 }
 
+func loggingMiddleware(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if !strings.HasPrefix(r.RequestURI, "/build") &&
+			!strings.HasPrefix(r.RequestURI, "/img") &&
+			!strings.HasPrefix(r.RequestURI, "/global.css") &&
+			!strings.HasPrefix(r.RequestURI, "/favicon") {
+
+			log.Infof("New request to %s\n", r.RequestURI)
+		}
+		next.ServeHTTP(w, r)
+	})
+}
+
 func NewRouter() *mux.Router {
 	r := mux.NewRouter()
+	r.Use(loggingMiddleware)
 
 	r.HandleFunc("/tos", GetIndex).Methods("GET")
 	r.HandleFunc("/tos/", GetIndex).Methods("GET")
@@ -97,7 +111,6 @@ func ProductionServer(srv *http.Server, httpsAddr string, domain string, manager
 }
 
 func GetIndex(w http.ResponseWriter, req *http.Request) {
-	log.Infoln("GetIndex requested!")
 	contents, err := ioutil.ReadFile("public/index.html")
 	if err != nil {
 		log.Errorf("Error serving index.html: %v", err)
