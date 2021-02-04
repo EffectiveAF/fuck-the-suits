@@ -53,8 +53,10 @@
   };
 </script>
 
+{#if $currentSymbol}
 <div id="chart-container">
   <SvelteFC
     {...getChartConfig([$companyTimeSeriesData[$currentSymbol], timeSeriesSchema])}
   />
 </div>
+{/if}

@@ -1,6 +1,7 @@
 <script>
   import { Link } from 'svelte-routing';
   import Button from './Button.svelte';
+  import ReactivePath from './ReactivePath.svelte';
 </script>
 
 <div class="divider"></div>
@@ -20,6 +21,8 @@
   </ul>
   <Button />
 </footer>
+
+<ReactivePath />
 
 <style>
 .divider {
