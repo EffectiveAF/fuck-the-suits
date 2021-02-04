@@ -31,7 +31,7 @@
       dataSource: {
         data: fusionTable,
         caption: {
-          text: 'Shorts against ' + $currentSymbol
+          text: 'New shorts against ' + $currentSymbol + ' (none on weekends)'
         },
         subcaption: {
           text: ''
