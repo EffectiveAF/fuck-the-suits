@@ -50,27 +50,27 @@
       </div>
 
       <div class="sidebar-items">
-        <p class="labels-overline">Data Visualization</p>
+        <p class="labels-overline">Top Shorts<br />In Market</p>
         <ul>
           <li>
-            <Link to="/" on:click={(e) => {
+            <button class="link" on:click={(e) => {
               e.preventDefault();
               navigate('/');
               $currentSymbol = '';
             }}>
-              The Biggest Shorts
-            </Link>
+            The Biggest Shorts
+            </button>
           </li>
 
           {#each $chartData as company (company.label)}
           <li>
-            <Link to={`/chart/${company.label}`} on:click={(e) => {
+            <button class={"link"} on:click={(e) => {
               e.preventDefault();
               navigate('/chart/' + company.label);
               $currentSymbol = company.label;
             }}>
               {company.label}
-            </Link>
+            </button>
           </li>
           {/each}
         </ul>
@@ -80,7 +80,11 @@
         <p class="labels-overline">More Info</p>
         <ul>
           <li>
-            <Link to="/methodology">Methodology</Link>
+            <button class="link" on:click={(e) => {
+              navigate('/methodology');
+            }}>
+              Methodology
+            </button>
           </li>
         </ul>
       </div>
@@ -115,23 +119,6 @@
 </div>
 
 <style>
-.container {
-  display: flex;
-  height: 100%;
-  min-height: 100vh;
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
-.main-grid {
-  max-width: 640px;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  padding-top: 176px;
-  /* border: 1px solid yellow; */
-}
-
 .header-and-image {
   display: flex;
   flex-direction: row;
@@ -248,7 +235,35 @@
   padding-top: 8px;
 }
 
-:global(#raphael-paper-2) {
-  border: 1px solid #818285;
+.link {
+  color: var(--contentColorDefault);
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.0025em;
+  margin: 6px 0;
+  padding: 1px;
+  border-left: 1px solid white;
+  border-radius: 0px;
+  padding-left: 4px;
+}
+
+
+.active-link,
+.link:hover {
+  background-color: #fff;
+  color: #2c2c2c;
+  border-radius: 0px;
+  -webkit-transform: translateX(5px); /* 10px to left */
+  -moz-transform: translateX(5px); /* 10px to left */
+  -ms-transform: translateX(5px); /* 10px to left */
+  transform: translateX(5px); /* 10px to left */
+  transition: .05s ease-in-out;
+}
+
+.link:focus {
+  -webkit-focus-ring-color: auto 5px;
 }
 </style>
