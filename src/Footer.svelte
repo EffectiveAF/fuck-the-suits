@@ -1,5 +1,6 @@
 <script>
   import { Link } from 'svelte-routing';
+  import Button from './Button.svelte';
   import ReactivePath from './ReactivePath.svelte';
 </script>
 
@@ -18,6 +19,7 @@
       <Link to="/methodology">Methodology</Link>
     </li>
   </ul>
+  <Button />
 </footer>
 
 <ReactivePath />

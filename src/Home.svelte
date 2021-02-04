@@ -102,7 +102,6 @@
           You know what to do. #HoldTheLine
           <br />
           <br />
-          <Link to={'/methodology'}>The deets</Link>
         </p>
       </div>
       <div class="data-viz">
