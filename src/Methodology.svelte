@@ -12,7 +12,7 @@
   </p>
 
   <p>
-    Nothing on this website is to be construed as financial advice.
+    Nothing on this website should be construed as financial advice.
   </p>
 
   <p>
