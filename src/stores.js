@@ -6,12 +6,12 @@ export const currentSymbol = writable('');
 
 // Schema: [{ label: String, value: String }]
 export const chartData = writable([
-  { label: 'SNDL', value: 1443001041 },
+  { label: 'SNDL', value: 1772351699 },
   { label: 'NAKD', value: 1032195923 },
-  { label: 'CTRM', value:  429639562 },
-  { label: 'AMC',  value:  351559524 },
-  { label: 'NOK',  value:  305129367 },
-  { label: 'ZOM',  value:  176468151 }
+  { label: 'AMC',  value:  471647036 },
+  { label: 'CTRM', value:  350801624 },
+  { label: 'ZOM',  value:  206368029 }
+  { label: 'NOK',  value:  196762771 },
 ]);
 
 export const companyTimeSeriesData = writable({
