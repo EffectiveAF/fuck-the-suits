@@ -554,10 +554,12 @@ function instance($$self, $$props, $$invalidate) {
         oldChartConfig = cloneObject(chartConfig);
     });
     onDestroy(() => {
-        chart.dispose();
-        Events.forEach((event, index) => {
-            FusionCharts.removeEventListener(event, eventListerners[index]);
-        });
+        if (chart) {
+            chart.dispose();
+            Events.forEach((event, index) => {
+                FusionCharts.removeEventListener(event, eventListerners[index]);
+            });
+        }
     });
 
 	$$self.$set = $$props => {
