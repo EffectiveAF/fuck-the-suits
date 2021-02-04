@@ -123,6 +123,6 @@ func main() {
 	}
 
 	if len(filenames) > 1 {
-		fmt.Printf("Inserted a total of %v rows from %v files\n", insertedTotal, len(filenames))
+		fmt.Printf("Inserted a total of %v rows from %v files 8-)\n", insertedTotal, len(filenames))
 	}
 }
