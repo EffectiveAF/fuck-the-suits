@@ -56,8 +56,8 @@ h2, h4, p {
 }
 
 @media (max-width: 639px) {
-  h2, h4, p {
-    max-width: calc(100% - 24px);
+  .main-grid {
+    margin: 0 24px;
   }
 }
 </style>
