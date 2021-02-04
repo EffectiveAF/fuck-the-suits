@@ -10,7 +10,7 @@ export const chartData = writable([
   { label: 'NAKD', value: 1032195923 },
   { label: 'AMC',  value:  471647036 },
   { label: 'CTRM', value:  350801624 },
-  { label: 'ZOM',  value:  206368029 }
+  { label: 'ZOM',  value:  206368029 },
   { label: 'NOK',  value:  196762771 },
 ]);
 
