@@ -18,6 +18,9 @@
     <li>
       <Link to="/methodology">Methodology</Link>
     </li>
+    <li>
+      <a href="https://github.com/EffectiveAF/fuck-the-suits" target="_blank">&lbrace; Source &rbrace;</a>
+    </li>
   </ul>
 
   <DonateButton />
