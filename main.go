@@ -31,7 +31,7 @@ func main() {
 	srv := NewServer(*httpAddr)
 
 	if *prod {
-		log.SetLevel(log.FatalLevel)
+		log.SetLevel(log.DebugLevel)
 
 		if *domain == "" {
 			log.Fatal("You must specify a -domain when using the -prod flag.")

@@ -97,6 +97,7 @@ func ProductionServer(srv *http.Server, httpsAddr string, domain string, manager
 }
 
 func GetIndex(w http.ResponseWriter, req *http.Request) {
+	log.Infoln("GetIndex requested!")
 	contents, err := ioutil.ReadFile("public/index.html")
 	if err != nil {
 		log.Errorf("Error serving index.html: %v", err)
