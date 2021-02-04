@@ -6,7 +6,7 @@
   import SvelteFC, { fcRoot } from './svelte-fusioncharts';
   // import StackedBarChart from './StackedBarChart.svelte';
   import TimeSeriesChart from './TimeSeriesChart.svelte';
-  import { currentSymbol, chartData } from './stores.js';
+  import { reactivePath, currentSymbol, chartData } from './stores.js';
 
   export let location = '';
   export let symbol = '';
@@ -53,7 +53,7 @@
         <p class="labels-overline">Top Shorts<br />In Market</p>
         <ul>
           <li>
-            <button class="link" on:click={(e) => {
+            <button class={"link " + ($reactivePath === '/' ? 'active-link' : '')} on:click={(e) => {
               e.preventDefault();
               navigate('/');
               $currentSymbol = '';
@@ -64,7 +64,7 @@
 
           {#each $chartData as company (company.label)}
           <li>
-            <button class={"link"} on:click={(e) => {
+            <button class={"link " + ($reactivePath === '/chart/' + company.label ? 'active-link' : '')} on:click={(e) => {
               e.preventDefault();
               navigate('/chart/' + company.label);
               $currentSymbol = company.label;
@@ -81,7 +81,9 @@
         <ul>
           <li>
             <button class="link" on:click={(e) => {
+              e.preventDefault();
               navigate('/methodology');
+              $currentSymbol = '';
             }}>
               Methodology
             </button>
@@ -106,7 +108,6 @@
           You know what to do. #HoldTheLine
           <br />
           <br />
-          <Link to={'/methodology'}>The deets</Link>
         </p>
       </div>
       <div class="data-viz">
@@ -249,7 +250,6 @@
   border-radius: 0px;
   padding-left: 4px;
 }
-
 
 .active-link,
 .link:hover {
