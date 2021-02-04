@@ -6,6 +6,7 @@
   import Methodology from './Methodology.svelte';
   import TermsOfService from './TermsOfService.svelte';
   import Footer from './Footer.svelte';
+  import FeedbackPopover from './FeedbackPopover.svelte';
 </script>
 
 <style>
@@ -32,3 +33,5 @@
   </div>
   <Footer />
 </Router>
+
+<FeedbackPopover />
