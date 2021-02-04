@@ -1,5 +1,6 @@
 <script>
   import { Link } from 'svelte-routing';
+  import ReactivePath from './ReactivePath.svelte';
 </script>
 
 <div class="divider"></div>
@@ -18,6 +19,8 @@
     </li>
   </ul>
 </footer>
+
+<ReactivePath />
 
 <style>
 .divider {

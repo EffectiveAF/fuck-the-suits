@@ -1,5 +1,7 @@
 import { writable } from 'svelte/store';
 
+export const reactivePath = writable(document.location.pathname);
+
 export const currentSymbol = writable('');
 
 // Schema: [{ label: String, value: String }]
