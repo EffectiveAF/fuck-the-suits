@@ -1,10 +1,11 @@
 <script>
-  import { Link, navigate } from 'svelte-routing';
+  import { navigate } from 'svelte-routing';
   import FusionCharts from 'fusioncharts';
   import Charts from 'fusioncharts/fusioncharts.charts';
   import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.candy';
   import SvelteFC, { fcRoot } from './svelte-fusioncharts';
   // import StackedBarChart from './StackedBarChart.svelte';
+  import BarChart from './BarChart.svelte';
   import TimeSeriesChart from './TimeSeriesChart.svelte';
   import { reactivePath, currentSymbol, chartData } from './stores.js';
 
@@ -14,29 +15,6 @@
   if (symbol) {
     $currentSymbol = symbol;
   }
-
-  // Always set FusionCharts as the first parameter
-  fcRoot(FusionCharts, Charts, FusionTheme);
-
-  const dataSource = {
-    chart: {
-      caption: 'The Most Shorted Companies This Past Week',
-      subCaption: '',
-      xAxisName: 'Company Ticker Symbol',
-      yAxisName: 'Short Volume (last 5 trading days)',
-      numberSuffix: '',
-      theme: 'candy'
-    },
-    data: $chartData
-  };
-
-  const chartConfigs = {
-    type: 'column2d',
-    width: '100%',
-    height: 400,
-    dataFormat: 'json',
-    dataSource: dataSource
-  };
 </script>
 
 <!-- <div class="container" style="border: 1px solid red;"> -->
@@ -100,6 +78,7 @@
           <div style="width: 16px;"></div>
           <img src="/img/short-shorts2.jpg" alt="Who wears short shorts?" />
         </div>
+
         <p class="p-large" style="padding-top: 8px;">
           Below are the most shorted companies in the world -- those with the
           highest short volume -- over the last 5 trading days.
@@ -110,9 +89,8 @@
           <br />
         </p>
       </div>
-      <div class="data-viz">
-        <SvelteFC {...chartConfigs} />
-      </div>
+
+      <BarChart />
     {:else}
       <TimeSeriesChart />
     {/if}
@@ -229,11 +207,6 @@
 .eff-the-suits:hover {
   cursor: pointer;
   background-image: url('/img/anon.png');
-}
-
-/* Data Viz */
-.data-viz {
-  padding-top: 8px;
 }
 
 .link {

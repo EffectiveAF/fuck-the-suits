@@ -31,7 +31,7 @@ p {
   line-height: 24px;
 }
 
-h2, h4, p {
+h2, p {
   margin-top: 24px;
   max-width: 80%;
 }
